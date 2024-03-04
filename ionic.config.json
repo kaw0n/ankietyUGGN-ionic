@@ -1,0 +1,7 @@
+{
+  "name": "ankietyUGGN",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
