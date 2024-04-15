@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Ankiety na UG
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,7 +14,67 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12">
+          <ion-img src="/assets/icon/logini.png" style="height:5rem;"></ion-img>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col style="display: flex;justify-content: end;">
+          <ion-button shape="round" size="small" color="danger" style="padding: 0px;width: 2rem;">
+            <ion-icon slot="icon-only" name="caret-forward-outline" style="height: 2rem"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-item>
+            <ion-input [(ngModel)]="surveyCode"type="number" min="1000000" max="9999999" label="Kod Ankiety" labelPlacement="floating"/>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          
+            <ion-button (click)="getSurveyData()" shape="fill" size="small" color="primary">
+              <ion-icon slot="start" name="search" style="height: 2rem"></ion-icon>
+              Sprawdź
+            </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-list class="striped">
+            <ion-item>
+              <ion-label>Uczelnia: </ion-label>
+              <ion-label>{{surveyData.University}}</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>Kierunek: </ion-label>
+              <ion-label>{{surveyData.Major}}</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>Semestr: </ion-label>
+              <ion-label>{{surveyData.Sem}}</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>Wykładowca: </ion-label>
+              <ion-label>{{surveyData.Lecturer}}</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>Przedmiot: </ion-label>
+              <ion-label>{{surveyData.Subject}}</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>Rodzaj zajęc: </ion-label>
+              <ion-label>{{surveyData.LectureType}}</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>Grupa: </ion-label>
+              <ion-label>{{surveyData.Group}}</ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
 </ion-content>
